@@ -1,0 +1,458 @@
+/* Main Container */
+.pricelist-page-container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Blue Header Bar */
+.pricelist-header {
+  background-color: #3498db;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-title {
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: white;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.language-toggle-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.language-text {
+  font-size: 0.95em;
+  color: white;
+}
+
+.header-flag {
+  width: 30px;
+  height: 20px;
+  object-fit: cover;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.header-flag:hover {
+  transform: scale(1.1);
+}
+
+/* Main Content Area */
+.pricelist-main-content {
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Controls Section */
+.pricelist-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.search-bars {
+  display: flex;
+  gap: 15px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.search-bar {
+  position: relative;
+  flex: 1;
+  max-width: 300px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px 40px 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95em;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+}
+
+.search-bar input:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.search-bar svg {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.action-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.action-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.new-product-btn {
+  background-color: #27ae60;
+  color: white;
+}
+
+.print-btn,
+.advanced-btn {
+  background-color: #5dade2;
+  color: white;
+}
+
+/* Table Container */
+.table-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: calc(100vh - 300px);
+}
+
+.pricelist-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.pricelist-table thead {
+  background-color: #f8f9fa;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.pricelist-table th {
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9em;
+  color: #333;
+  border-bottom: 2px solid #e0e0e0;
+  white-space: nowrap;
+  position: relative;
+}
+
+.pricelist-table th .sort-icon {
+  margin-left: 5px;
+  opacity: 0.5;
+  vertical-align: middle;
+}
+
+.pricelist-table td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #000;
+}
+
+.pricelist-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.pricelist-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.pricelist-table input {
+  width: 100%;
+  border: 1px solid transparent;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-size: 0.95em;
+  background-color: transparent;
+  color: #000;
+  box-sizing: border-box;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.pricelist-table input:hover {
+  background-color: #f9f9f9;
+  border-color: #ddd;
+}
+
+.pricelist-table input:focus {
+  outline: none;
+  border-color: #3498db;
+  background-color: white;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+}
+
+.actions-col {
+  text-align: center;
+  width: 50px;
+}
+
+.actions-icon {
+  color: #777;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.actions-icon:hover {
+  color: #3498db;
+}
+
+.no-products {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+  font-style: italic;
+}
+
+/* Responsive Styles */
+
+/* Tablet Landscape (1024px and below) */
+@media (max-width: 1024px) {
+  .pricelist-main-content {
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .pricelist-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-bars {
+    width: 100%;
+    max-width: none;
+  }
+
+  .search-bar {
+    max-width: none;
+  }
+
+  .action-buttons {
+    justify-content: flex-start;
+  }
+
+  /* Hide some columns on tablet */
+  .in-price-col,
+  .unit-col {
+    display: none;
+  }
+
+  .table-wrapper {
+    max-height: calc(100vh - 280px);
+  }
+}
+
+/* Tablet Portrait / Mobile Landscape (768px and below) */
+@media (max-width: 768px) {
+  .pricelist-header {
+    padding: 12px 15px;
+  }
+
+  .header-title {
+    font-size: 1.2em;
+  }
+
+  .pricelist-main-content {
+    margin: 10px;
+    padding: 12px;
+  }
+
+  .search-bars {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-bar {
+    max-width: none;
+  }
+
+  /* Hide more columns */
+  .in-price-col,
+  .unit-col,
+  .stock-col,
+  .desc-col {
+    display: none;
+  }
+
+  .table-wrapper {
+    max-height: calc(100vh - 250px);
+  }
+}
+
+/* Mobile Portrait (600px and below) */
+@media (max-width: 600px) {
+  .pricelist-header {
+    padding: 10px 12px;
+  }
+
+  .header-left {
+    gap: 10px;
+  }
+
+  .header-title {
+    font-size: 1.1em;
+  }
+
+  .language-toggle-header {
+    gap: 8px;
+  }
+
+  .language-text {
+    font-size: 0.85em;
+  }
+
+  .header-flag {
+    width: 25px;
+    height: 17px;
+  }
+
+  .pricelist-main-content {
+    margin: 8px;
+    padding: 10px;
+  }
+
+  .pricelist-controls {
+    margin-bottom: 15px;
+  }
+
+  .action-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .action-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Mobile: Stack table vertically */
+  .pricelist-table,
+  .pricelist-table thead,
+  .pricelist-table tbody,
+  .pricelist-table th,
+  .pricelist-table td,
+  .pricelist-table tr {
+    display: block;
+  }
+
+  .pricelist-table thead {
+    display: none;
+  }
+
+  .pricelist-table tr {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .pricelist-table td {
+    border: none;
+    border-bottom: 1px dotted #e0e0e0;
+    padding: 10px;
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+  }
+
+  .pricelist-table td:last-child {
+    border-bottom: none;
+  }
+
+  .pricelist-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    text-align: left;
+    font-weight: 600;
+    color: #555;
+  }
+
+  .pricelist-table input {
+    width: 100%;
+    text-align: right;
+    padding: 6px 8px;
+  }
+
+  .actions-col {
+    text-align: right;
+    padding-left: 50%;
+  }
+
+  .actions-col::before {
+    content: "Actions";
+    position: absolute;
+    left: 10px;
+    font-weight: 600;
+    color: #555;
+  }
+
+  .table-wrapper {
+    max-height: none;
+    overflow-y: visible;
+  }
+}
+
+/* Adjust HamburgerMenu positioning in header */
+.pricelist-header .top-left-container {
+  position: relative;
+  top: 0;
+  left: 0;
+}
