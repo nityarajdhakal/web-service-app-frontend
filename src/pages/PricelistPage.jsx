@@ -18,6 +18,13 @@ const PricelistPage = () => {
         
         const langCode = language === "SE" ? "sv" : "en";
         const res = await fetch(`${API_BASE_URL}/translations?page=pricelist&lang=${langCode}`);
+        
+        if (!res.ok) {
+          const text = await res.text();
+          console.error("Server responded with error:", res.status, text);
+          return;
+        }
+
         const data = await res.json();
         if (data.success) setTexts(data.data);
       } catch (err) {
@@ -41,10 +48,13 @@ const PricelistPage = () => {
           headers: { Authorization: `Bearer ${token}` },
         });
 
-        
-        if (res.status === 401 || res.status === 403) {
-          localStorage.removeItem("token"); // 
-          navigate("/login"); 
+        if (!res.ok) {
+          const text = await res.text();
+          console.error("Server responded with error:", res.status, text);
+          if (res.status === 401 || res.status === 403) {
+            localStorage.removeItem("token");
+            navigate("/login");
+          }
           return;
         }
 
@@ -86,6 +96,13 @@ const PricelistPage = () => {
             },
             body: JSON.stringify(productToUpdate)
         });
+
+        if (!res.ok) {
+          const text = await res.text();
+          console.error("Server responded with error:", res.status, text);
+          alert('Server error: ' + res.status);
+          return;
+        }
 
         const data = await res.json();
         if (!data.success) {
