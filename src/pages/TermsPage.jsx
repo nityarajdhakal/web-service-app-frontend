@@ -15,6 +15,13 @@ const TermsPage = () => {
             try {
                 const langCode = language === "SE" ? "sv" : "en";
                 const res = await fetch(`${API_BASE_URL}/translations?page=terms&lang=${langCode}`);
+                
+                if (!res.ok) {
+                  const text = await res.text();
+                  console.error("Server responded with error:", res.status, text);
+                  return;
+                }
+
                 const data = await res.json();
                 if (data.success) {
                     setTexts(data.data);
