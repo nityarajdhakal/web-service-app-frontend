@@ -4,7 +4,7 @@ import "./PricelistPage.css";
 import HamburgerMenu from "../components/HamburgerMenu";
 import { Search, Plus, Printer, SlidersHorizontal, ChevronDown, MoreVertical } from "lucide-react";
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
+const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 
 const PricelistPage = () => {

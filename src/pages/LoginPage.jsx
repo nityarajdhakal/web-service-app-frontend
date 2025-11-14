@@ -5,7 +5,7 @@ import HamburgerMenu from "../components/HamburgerMenu";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
+const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 
 const LoginPage = () => {
