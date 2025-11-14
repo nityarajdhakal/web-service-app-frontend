@@ -5,7 +5,7 @@ import HamburgerMenu from "../components/HamburgerMenu";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 
-const API_BASE_URL = "http://localhost:5000/api";
+const API_BASE_URL = "https://web-service-app-wo6z.onrender.com/api";
 
 const LoginPage = () => {
   const navigate = useNavigate();
