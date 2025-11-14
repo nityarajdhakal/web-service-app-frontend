@@ -4,8 +4,7 @@ import "./PricelistPage.css";
 import HamburgerMenu from "../components/HamburgerMenu";
 import { Search, Plus, Printer, SlidersHorizontal, ChevronDown, MoreVertical } from "lucide-react";
 
-const API_BASE_URL = process.env.REACT_APP_API_URL;
-
+const API_BASE_URL = "https://web-service-app-wo6z.onrender.com/api";
 
 const PricelistPage = () => {
   const navigate = useNavigate();

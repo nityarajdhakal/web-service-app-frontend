@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./TermsPage.css";
 import HamburgerMenu from "../components/HamburgerMenu";
 
-const API_BASE_URL = process.env.REACT_APP_API_URL;
-
+const API_BASE_URL = "https://web-service-app-wo6z.onrender.com/api";
 
 const TermsPage = () => {
     const navigate = useNavigate();
